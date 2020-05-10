@@ -1,0 +1,432 @@
+body, .body{
+ margin: auto 0px;
+
+}
+
+.body{
+    padding :0px 2vw;
+ min-height: 100vh;
+
+}
+
+.zone {
+    /*cursor:pointer;*/
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+/*Navigation bar*/
+
+.main-nav{
+    display:flex;
+    list-style:none;
+    font-size: 0.7em;
+    margin:0px;
+}
+
+
+
+
+
+/* Use this only when the width is less than or equal to 600px*/
+@media only screen and (max-width:600px){
+   .main-nav{
+    font-size: 0.5em;
+    padding: 0;
+   } 
+}
+
+.push{
+    margin-left:auto;
+
+}
+
+li{
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+
+.nav-li{
+    padding:15px;
+    font-size:16px;
+    
+}
+
+a{
+    color:#f5f5f6;
+    text-decoration: none;
+
+}
+
+/*
+Currency*/
+
+.currencyMenu{
+    background:transparent;
+    color: rgba(3,169,244,1);
+    border: none;
+}
+
+.currencyMenu::after{
+    color: rgba(3,169,244,1);
+    border: none;
+}
+
+option{
+    background:rgba(3,169,244,1);
+    color: rgba(0,0,0,1);
+ 
+}
+
+
+/*.USD,.NGN.CAD{
+    width:5px;
+    height:5px;
+}
+*/
+
+
+.dateANDtime{
+    display:flex;
+    font-size: 1.5vw;
+
+}
+
+.date{
+    color:#03a9f4;
+    text-align: left;  
+    margin-bottom:0px;
+}
+
+.time{
+    color:#03a9f4;
+    margin-left: auto;
+   margin-bottom:0px;
+}
+/* Cover Style*/
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto auto;
+    justify-content:center;
+    align-items: center;
+    height: auto;
+padding-top: 4vw;
+padding-bottom: 4vw;
+ font-family: Old Standard TT;
+
+}
+.netAccount{
+       margin:0 auto;
+    grid-column:1/span 5;
+     grid-row: 0/1;
+}
+
+.Initial-Capital-box{
+    grid-column: 2/span 1;
+    grid-row: 2/3;
+    margin:auto;
+    text-align: center;
+}
+
+.Todays-Profit-box{
+    grid-column: 4/span 1;
+    grid-row: 2/3;
+    margin:auto;
+      text-align: center;
+}
+
+h5{
+    margin:0 auto;
+    font-size:2vw;
+}
+
+.Admin-grid{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+}
+.flex{
+    display:flex;
+}
+
+.block{
+    display:block;
+}
+
+
+
+
+.flex-direction-column{
+    flex-direction: column;
+    align-items:center;
+}
+h6{
+    margin:1px auto;
+    padding:1px ;
+}
+h1{
+    font-size: 6vw;
+    margin: 0px;
+    margin-bottom: 3vw;
+    padding: 0px;
+ text-shadow: 5px 5px 200px azure;
+}
+
+.container:hover>.netAccount>h1{
+    transition-duration: 1.5s; 
+  text-shadow: 5px 5px 70px azure;
+}
+/*
+#netAccountGain > h5{
+    margin: 0.4vw ;
+    padding: 0.4vw;
+    font-size: 2vw;
+}*/
+#netAccountGain > h5:first-child{
+    margin-top: 0.4vw ;
+    margin-bottom: 0px;
+    padding-bottom:0px;
+    font-size: 2vw;
+}
+
+#netAccountGain > h5:last-child{
+    margin-top: 0px ;
+}
+
+
+
+/*Admin Page*/
+.Admin_Access{
+    position:fixed;
+    min-height:50vh;
+    min-width:60vw;
+    background-color:rgba(1,37,57,1); 
+    background-clip: padding-box;
+    top:25vh;
+    left:20vw;
+    border: 20px groove rgba(255,255,255,0.5) ;
+    border-radius:5px;
+    text-align: center;
+        color:white;
+
+    box-shadow:0px 0px 1000px rgba(0,0,0,1), inset rgba(255,255,255,0) 0px 0px 50px ;
+}
+
+input{
+    width: 10vw;
+}
+
+
+/*Project Grid*/
+.page-selection{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.page-selection>a{
+    font-size:2vw;
+    margin: 0px 3vw;
+    text-align: center;
+    color:rgba(255,255,255,0.5);
+
+}
+a>h3{
+    margin:0px auto;
+}
+
+
+.position-absolute{
+    position:absolute;
+}
+
+.underline{
+    height:5px;
+    width :6vw;
+    margin: 0px auto;
+    background :transparent;
+    align-self: center;
+    border-radius:10px;
+}
+
+.page-selection>a>h3:hover {
+        color:;
+        text-shadow: -5px -5px 50px  #03a9f4;
+
+}
+
+.text-color-blue{
+    color:#03a9f4;
+}
+
+.show {    
+    background:#03a9f4;
+     background: -webkit-linear-gradient(right, #03a9f4 0%,#00ffe9 100%)
+
+}
+
+hr{
+    margin-top:0px;
+    height: 0.2px;
+    align-self: center;
+    background: grey;
+    border:grey;
+
+}
+.hidden{
+    visibility: hidden;
+}
+
+/*.page-selected>.Investors {
+    min-height: 55vh;
+
+}*/
+
+.investorsGrid{
+
+ grid-template-columns: 1fr 1fr 1.2fr 0.9fr 0.9fr 1fr 0.6fr;
+ grid-template-rows: 1;
+}
+
+.column_names{
+        display:grid;
+            color:rgba(255,255,255,0.4);
+            font-size:1.6vw;
+        grid-column:header;
+        align-items:end;
+        margin:4px 12px;
+        text-align: right;
+}
+
+.center-align{
+    text-align:center;
+}
+
+.list {
+    background-color:rgba(255,255,255,0.1);
+    min-height: 30px;
+    max-height: auto;
+    padding:4px 12px;
+    margin:6px 4px;
+  color:rgba(255,255,255,0.7);
+  display:grid;
+ 
+align-items:center;
+border-radius:0.8vw;
+text-align: right;
+font-family:  Old Standard TT;
+}
+.list:hover {
+    background-color:rgba(200,255,255,0.20);
+
+}
+
+.text-color-blue2{
+        color:#03a9f4;
+        font-weight: bolder;
+       /* -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #03d3f4;*/
+}
+
+
+/*Footer*/
+footer{
+    text-align:center;
+    position: relative;
+    margin-top:auto;
+
+
+}
+
+.text-color-red{
+    color:rgba(235,0,0,0.9);  
+     font-weight:bold;
+}
+
+.text-color-green{
+    color:rgba(0,220,0 ,0.9);
+    font-weight:bold;
+}
+.text-color-green2{
+    color:green;
+    text-shadow:0px 0px 100px rgba(0,220,0 ,0.9);
+
+}
+
+.text-color-white{
+color:white;
+}
+
+.text-color-neutral{
+color:rgba(255,255,255,0.5);
+}
+
+.text-color-neutral2{
+color:rgba(255,255,255,0.8);
+}
+
+
+
+/*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
+/***********************************************************************
+ *  Green Background
+ **********************************************************************/
+.green{
+    background: #56B870; /* Old browsers */
+    background: -moz-linear-gradient(top, #56B870 0%, #a5c956 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#56B870), color-stop(100%,#a5c956)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #56B870 0%,#a5c956 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #56B870 0%,#a5c956 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #56B870 0%,#a5c956 100%); /* IE10+ */
+    background: linear-gradient(top, #56B870 0%,#a5c956 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Red Background
+ **********************************************************************/
+.red{
+    background: #C655BE; /* Old browsers */
+    background: -moz-linear-gradient(top, #C655BE 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C655BE), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(top, #C655BE 0%,#cf0404 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Yellow Background
+ **********************************************************************/
+.yellow{
+    background: #F3AAAA; /* Old browsers */
+    background: -moz-linear-gradient(top, #F3AAAA 0%, #febf04 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F3AAAA), color-stop(100%,#febf04)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* IE10+ */
+    background: linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue{
+    background: #7abcff; /* Old browsers */
+    background: -moz-linear-gradient(top, #27496D 0%, #022043 80%);/* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-start(0%,#27496D),  color-stop(80%,red)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #142850 0%, #022043 60%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #27496D 0%, #022043 80%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #27496D 0%, #022043 80%);; /* IE10+ */
+    background: linear-gradient(top, #27496D 0%, #022043 80%); /* W3C */
+}

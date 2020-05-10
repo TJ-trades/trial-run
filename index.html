@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trading Record</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+</head>
+<body  class = "blue">
+  <div class = "body">
+
+    <!-- Navigation bar -->
+    <nav class="zone navbar">	
+
+    	<ul class="main-nav">
+    		<li class="nav-li"><a  href="">DayTradingIcon</a></li>
+    		
+        <li class="push nav-li "><img class="currencyImg" src="Trading%20pictures%20for%20website/usd.png" HEIGHT="15" WIDTH="15" BORDER="0"align="center">
+          <select class="currencyMenu">
+            <option  class="USD currency" value ="USD" >USD</option>
+
+            <option class="CAD currency" value ="CAD"><img src="">CAD</option>
+
+            <option class="NGN currency" value ="NGN"><img src="">NGN</option>
+           </select> 
+         </li>
+    	</ul>
+    </nav>
+
+
+
+<div class="dateANDtime">
+   <!--  Date -->
+    <p class="date">date</p>
+
+    <!-- Ti.me -->
+     <p class="time"></p>
+</div>
+
+
+    <div class="container zone ">
+
+   
+      <div class ="netAccount flex">
+        <h1 class = "netAccountValue">$870453.00</h1>
+
+          <div id ="netAccountGain">
+         <h5 class="account-$-gain list_profitOrLoss">$43500</h5>
+        <h5 class="account-%-gain list_profitOrLoss">-$2000</h5>
+          </div>
+      </div>
+
+ 
+        <div class="Initial-Capital-box block">
+          <h5 class="text-color-neutral">Initial Capital</h5>
+           <h5 class="Initial-Capital text-color-neutral2">$1000</h5>
+        </div>
+
+        <div class="Todays-Profit-box block">
+           <h5 class="text-color-neutral">Today's Profit</h5>
+           <h5 class="Todays-Profit text-color-neutral2">$575</h5>
+        </div>
+
+    </div>
+
+<br>
+
+
+        <!-- ADMIN PAGE -->
+    <div class="Admin_Access hidden"> <h2> |--Admin Access --|</h2>
+
+<div class="Admin-grid">
+      <!-- INVESTORS COLUMN -->
+      <div class="zone ">
+        <h6>Investors</h6>
+
+
+        <div class=" Admin-grid">
+
+              <div class="flex flex-direction-column">
+                <h6>Name</h6>
+              
+                  <input class="investorName" type="text" name="Name">
+               </div>
+
+
+           <div class="flex flex-direction-column">
+                <h6>Contribution</h6>
+              
+                  <input class="investorInitialContributions" type="number" name="Initial" min="1">
+               </div>
+
+      </div> 
+        <button class="Add_Investor">Add Investor</button>
+
+       </div>
+
+        <!-- PROFITS COLUMN -->
+       <div class="zone">
+        <h6>Profits</h6>
+          <div class=" Admin-grid">
+
+              <div class="">
+                <h6>dates</h6>
+                </div>
+
+            <div>  
+             <h6>profit</h6>  
+          <input class="updateProfits" type="number" name="Profits" placeholder="Enter $...">
+         </div>
+    </div>
+
+       <button class="Update_Profits">Update Profits</button>
+      </div>
+    </div>
+</div>
+
+
+
+
+    <div class="listview">
+
+      <div class="page-selection ">
+
+        <a><h3 class="Investors text-color-blue">Investors<div class="underline show"></div></h3></a>
+        
+        <a><h3 class="Pie-Chart ">Pie Chart<div class="underline"></div></h3></a>
+        
+        <a><h3 class= " Performance ">Performance<div class="underline"></div></h3></a>
+
+      </div>
+      <hr>
+
+      </div>
+
+<div class="page-selected ">
+
+  <div class="Investors ">
+
+    <div class="column_names investorsGrid">
+     
+        <li class="center-align">Names</li>
+        <li class="">Initial investment</li>
+        <li class="">Total Return</li>
+        <li class="">Tax</li>
+        <li class="">Fee</li>
+        <li class="">Profit/Loss</li>
+        <li class="">Change</li>
+    </div>
+
+      <div class=" list investorsGrid">
+       
+       <li class=" list_Name text-color-blue2 center-align">Yung TJ</li>
+        <li class="list_II">250</li>
+        <li class="list_totalReturn">250</li>
+        <li class="list_Tax">$400</li>
+        <li class="list_Fee">$1425</li>
+        <li class="list_profitOrLoss">$1425</li>
+        <li class="list_change">570%</li>
+    
+    </div>
+
+       <div class=" list investorsGrid">
+      
+       <li class="text-color-blue2 center-align">Names</li>
+        <li class="">100</li>
+        <li class="">Total Return</li>
+        <li class="">Tax</li>
+        <li class="">Fee</li>
+        <li class="list_profitOrLoss">-$32563</li>
+        <li class="">Change</li>
+     
+    </div>
+
+  </div>
+
+  <div class="Pie-Chart hidden"> <h1>Pie chart</h1></div>
+  <div class= " Performance hidden"><h1>Performance</h1></div>
+
+</div>
+
+
+
+    <footer class=" text-color-neutral">
+
+      <ul class="main-nav">
+        <li>Copyright© 2020 - Trading Record
+All rights reserved</li>
+        <li><a href="">Products</a></li>
+        <li><a href="">Out Team</a></li>
+        <li class="Admin push text-color-neutral">Admin</li>
+      </ul>
+</footer>
+
+  </div >
+  <script type="text/javascript" src="money.js"></script>
+  <script type="text/javascript" src="money.js" src="java.js"></script>
+
+</body>
+</html>
