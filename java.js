@@ -11,6 +11,9 @@ const pageSelectedArray = [Investors,PieChart, Performance];
 //Checking if we are running the addNewINvestor function or addProfit function
 let areWeAdding_A_NewInvestor;
 
+//Checking if the currency just changed and the function for currency conversion is running
+// let areWeChangingCurrency;
+
 //Function for calculating the sum of an array
 const sum =(Array)=>{
  let answer = Array.reduce((a, b) => Number(a) + Number(b),0);
@@ -295,8 +298,15 @@ console.log(Initial_Investment);
 
 //sectionA_Calculation
 Individual_Tax = taxCalculator(Total_Individual_Return);
+//if an individual has an overall loss he bears all of it
+if(Total_Individual_Return<0){
+	Individual_Fee= 0;
+individualProfit=(Total_Individual_Return-Individual_Tax);
+}else if(Total_Individual_Return>=0){
 Individual_Fee= (Total_Individual_Return-Individual_Tax)*0.3;
 individualProfit=(Total_Individual_Return-Individual_Tax)*0.7;
+}
+
 
 individualProfitPercentage = Number(individualProfit/Initial_Investment);
 
@@ -315,8 +325,14 @@ Initial_Investment = investorsDatabase[c].Initial_Investment ;
 
 //sectionA_Calculation
 Individual_Tax = taxCalculator(Total_Individual_Return);
+//if an individual has an overall loss he bears all of it
+if(Total_Individual_Return<0){
+	Individual_Fee= 0;
+individualProfit=(Total_Individual_Return-Individual_Tax);
+}else if(Total_Individual_Return>=0){
 Individual_Fee= (Total_Individual_Return-Individual_Tax)*0.3;
 individualProfit=(Total_Individual_Return-Individual_Tax)*0.7;
+}
 
 individualProfitPercentage= Number((individualProfit/Initial_Investment));
 
@@ -373,9 +389,15 @@ let currencyType =document.getElementsByClassName("currencyMenu")[0].value;
 
 		let Value = formatter.format(NumberValue);
 		if (currencyType==="NGN"){
+			if(Value.charAt(0)==="N"){
 
 			Value = Value.substring(4);
 			Value = `₦${Value}`;
+		}else if(Value.charAt(0)==="-" && Value.charAt(1)==="N"){
+
+			Value = Value.substring(5);
+			Value = `-₦${Value}`;
+			}
 		}
 		return(Value);
 	}
@@ -410,14 +432,17 @@ const syncingCurrencyDatabase=(valueToBeFormatted,dataType)=>{
 
 	//setting the currency rate to match target currency
 	if (currencyMenu.value ==="USD"){
-		currencyFactor= 1;
+		//calling the cuurency exchange rates from the open exchange rates api
+		//using the javascript written in the html
+		currencyFactor= currencyRates.USD;
 
 	}else if(currencyMenu.value ==="CAD"){
 
-		currencyFactor = 1;
-	}else{
+		currencyFactor = currencyRates.CAD;
 
-		currencyFactor =1 ;
+	}else if(currencyMenu.value ==="NGN"){
+
+		currencyFactor = currencyRates.NGN;
 	}
 
 	// console.log(valueToBeFormatted);
@@ -542,7 +567,8 @@ for (let c=listLength-1; c>=0; c--) {
 
 //calculation for all investorsDatabase Values
 for (let c=investorsDatabase.length-1; c>=0; c--) {
-// console.log(`Before Calculation ==> ${investorsDatabase[c]}`);
+console.log(`Before Calculation ==> `);
+console.log(investorsDatabase[c]);
 		//calculation function for all the values
 			console.log(areWeAdding_A_NewInvestor);
 		if(areWeAdding_A_NewInvestor === true){sectionA1_Calculation(c);}
@@ -551,7 +577,7 @@ for (let c=investorsDatabase.length-1; c>=0; c--) {
 		// console.log(`After Calculation ==> ${investorsDatabase[c]}`);
 
 		//put the calculated values into the investorsDatabase
-		setValuesIntoObjectElements(c);
+
 		// console.log(`After Inserting values ==> ${investorsDatabase[c]}`);
 	}
 
@@ -565,11 +591,13 @@ for (let c=investorsDatabase.length-1; c>=0; c--) {
 		if(areWeAdding_A_NewInvestor === true){sectionA1_Calculation(c);}
 		if(areWeAdding_A_NewInvestor === false){sectionA2_Calculation(c);}
 		
-		// console.log(`After Calculation ==> ${investorsDatabase[c]}`);
+		console.log(`After Calculation ==> ${investorsDatabase}`);
+		console.log(investorsDatabase[c]);
 
 		//put the calculated values into the investorsDatabase
 		setValuesIntoObjectElements(c);
-		// console.log(`After Inserting values ==> ${investorsDatabase[c]}`);
+		console.log(`After Inserting values ==> ${investorsDatabase}`);
+		console.log(investorsDatabase[c]);
 	}
 
 
@@ -594,9 +622,10 @@ for (let c=investorsDatabase.length-1; c>=0; c--) {
 		list.children[5].classList.add("list_profitOrLoss");
 		list.children[6].classList.add("list_change");
 
+		let values = investorsDatabase[c];
 
 		//changing the investors Database values into required currency and format
-    	 const values =  syncingCurrencyDatabase(investorsDatabase[c],"object");
+    	 values =  syncingCurrencyDatabase(values,"object");
 
 		list.children[0].innerText =values[0]; //Name
 		list.children[1].innerText=  values[1]; //initial Investment
@@ -688,6 +717,8 @@ const addNewProfits=()=>{
 
 //selected Currency function to change img and number value
 const selectedCurrency=(event)=>{
+	// areWeChangingCurrency=true;
+
 	const currencyImg =document.getElementsByClassName("currencyImg")[0];
 	
 	console.log(event.target.value);
@@ -702,6 +733,7 @@ if (event.target.value  === "CAD"){
 if (event.target.value  === "NGN"){
 	currencyImg.src = "Trading%20pictures%20for%20website/ngn.png"
 }
+displayElements(0, false);
 }
 
 
@@ -713,10 +745,14 @@ const button_Update_Profits = document.getElementsByClassName("Update_Profits")[
 button_Update_Profits.addEventListener("click",addNewProfits);
 
 
+
 //Defining currency variables
 let currencyMenu = document.getElementsByClassName("currencyMenu")[0];
 
 //calling the selectedCurrency function after selecting a currency
 currencyMenu.addEventListener("change", selectedCurrency,false);
 
-console.log(fx.convert(12, {from: "USD", to: "CAD"}));
+
+
+
+console.log(currencyRates.NGN);

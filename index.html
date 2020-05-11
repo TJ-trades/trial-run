@@ -195,8 +195,35 @@ All rights reserved</li>
 </footer>
 
   </div >
-  <script type="text/javascript" src="money.js"></script>
-  <script type="text/javascript" src="money.js" src="java.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+   <script type="text/javascript">
+    // Load exchange rates data via AJAX:
+    var currencyRates;
+    var openExchangeRates = $.getJSON(
+      // NB: using Open Exchange Rates here, but you can use any source!
+        'https://openexchangerates.org/api/latest.json?app_id=767b7986d53b42f58bcabdcc30e92d7b',
+        function(data) {
+                currencyRates = data.rates;
+                 console.log();
+        }
+    );
+
+    //if the website doesnt Run
+     if( typeof currencyRates === "undefined"){}
+    currencyRates = {
+      CAD: 1.40175,
+      NGN: 390,
+      USD: 1
+    };
+    
+</script>
+
+<script type="text/javascript" src="money.js"></script>
+  <script type="text/javascript" src="java.js"></script>
+<script>
+
+ 
+</script>
 </body>
 </html>

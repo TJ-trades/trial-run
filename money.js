@@ -10,6 +10,9 @@
  * For details, examples and documentation:
  * http://openexchangerates.github.io/money.js/
  */
+
+// console.log(fx.rates);
+// console.log(fx.Setup);
 (function(root, undefined) {
 
 	// Create a safe reference to the money.js object for use below.
@@ -27,7 +30,7 @@
 	// (and default from/to) currencies - or the rates can be loaded in later if needed.
 	var fxSetup = root.fxSetup || {
 		rates : {},
-		base : ""
+		base : "USD"
 	};
 
 	// Object containing exchange rates relative to the fx.base currency, eg { "GBP" : "0.64" }
